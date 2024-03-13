@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <style>
+            #box1{
+                height: 100px;
+                width: 250px;
+                background-image: url("https://captchas-generator.netlify.app/assets/img/captcha-bg.png");
+                font-size: 50px;
+                color: white;
+                text-align: center;
+                line-height: 100px;
+            }
+        </style>
+        <script>
+            function getRandom(min, max){
+                var a = Math.random();
+                a = a * (max-min)+min;
+                a = Math.floor(a);
+                return a;
+            }
+
+            function getCaptch(){
+             var spl = "@$&";
+             var a = getRandom(0,9);
+             var b = String.fromCharCode( getRandom(65, 90) );
+             var c = String.fromCharCode( getRandom(97, 122) );
+
+             var d = spl.charAt( getRandom(0, spl.length-1) );
+
+             var e = String.fromCharCode( getRandom(65, 90) );
+             var f = String.fromCharCode( getRandom(97, 122) );
+             var cp = ""+a+b+c+d+e+f;
+             box1.innerHTML = cp;
+            }
+            
+            function matchcp(){
+                var a = box1.innerText;
+                var b = document.getElementById("ti").value;
+                if(a==b)
+                {
+                    alert("Match !");
+                }else{
+                    alert("Not Match"); 
+                }
+            }
+        </script>
+    </head> 
+    <body onload="getCaptch()">
+        <h1>CAPTCHA GENERATOR</h1>
+        <!-- a-z/0-9/!@#$%*&-+ -->
+        <div id="box1"></div><button onclick="getCaptch()">&#8635;</button>
+        <input type="text" id="ti">
+        <button onclick="matchcp()">Match CP</button>
+    </body>
+</html>

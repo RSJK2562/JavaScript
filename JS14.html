@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <script>
+            function demo1(){
+                alert("success 1");
+            }
+            function demo2(){
+                console.log("foucus");
+            }
+            function demo3(){
+                console.log("Blur");
+            }
+            function demo4(){
+                console.log("Mouse Enter");
+            }
+            function demo5(){
+                console.log("Monse leave")
+            }
+            function demo6(){
+                console.log("Key Press");
+            }
+            function demo7(){
+                console.log("Key Down");
+            }
+            function demo8(){
+                console.log("Key UP");
+            }
+            function demo9(){
+                console.log("Changed");
+            }
+        </script>
+
+        <button onclick="demo1()">Demo 1</button>
+        <br>
+        <input type="text" onfocus="demo2()" onblur="demo3()" onmouseenter="demo4()" onmouseleave="demo5()" onkeypress="demo6()" onkeydown="demo7()" onkeyup="demo8()">
+        <br>
+        <select onchange="demo9()">
+            <option value="">1</option>
+            <option value="">2</option>
+            <option value="">3</option>
+        </select>
+    </body>
+</html>

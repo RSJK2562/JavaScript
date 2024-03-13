@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <style>
+            #outer{
+                width: 200px;
+                height: 10px;
+                background-color: silver;
+                padding: 2px;
+            }
+            #progress{
+                width: 0%;
+                height: 10px;
+                background-color: red;
+                transition: ease 1s all;
+            }
+        </style>
+        <script>
+            function togglepassword(){
+                var a = document.getElementById("chk1").checked;
+                if(a==true){
+                    document.getElementById("t1").type="text";
+                }else{
+                    document.getElementById("t1").type="password";
+                }
+            }
+            function checkpassword(){
+                var pass = t1.value;
+                var score = 0;
+                if(pass.match(/[a-z]/)){
+                    score++;
+                }
+                if(pass.match(/[A-Z]/)){
+                    score++;
+                }
+                if(pass.match(/[0-9]/)){
+                    score++;
+                }
+                if(pass.match(/[@#$%!*&]/)){
+                    score++;
+                }
+                if(pass.length>=8){
+                    score++;
+                }
+                if(score==0){
+                    passwordstatus.innerHTML = "";
+                    progress.style.width = "0%";
+                }
+                else if(score==1){
+                    passwordstatus.innerHTML = "Week";
+                    progress.style.width = "20%";
+                    progress.style.backgroundColor = "red";
+                }
+                else if(score==2){
+                    passwordstatus.innerHTML = "Fair";
+                    progress.style.width = "40%";
+                    progress.style.backgroundColor = "orange";
+                }
+                else if(score==3){
+                    passwordstatus.innerHTML = "Good";
+                    progress.style.width = "60%";
+                    progress.style.backgroundColor = "yellow";
+                }
+                else if(score==4){
+                    passwordstatus.innerHTML = "Strong";
+                    progress.style.width = "80%";
+                    progress.style.backgroundColor = "blue";
+                }else{
+                    passwordstatus.innerHTML = "Unbreakeble";
+                    progress.style.width = "100%";
+                    progress.style.backgroundColor = "green";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        Enter Your Email: 
+        <input type="email">
+        <br>
+        Enter Your Password: 
+        <input type="password" id="t1" onkeyup="checkpassword()">
+        <input type="checkbox" id="chk1" onclick="togglepassword()">
+        <br>
+        Password Strength: <b id="passwordstatus"></b>
+        <br>
+        <div id="outer">
+            <div id="progress"></div>
+        </div>
+        <button>Login</button>
+    </body>
+</html>

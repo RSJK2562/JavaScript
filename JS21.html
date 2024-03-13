@@ -1,0 +1,52 @@
+<html>
+
+<body>
+    <script>
+        var name = "coders";
+        name = name + " hello";
+        document.write(name);
+        document.write("<br>");
+        document.write(name.indexOf("e"));
+        document.write("<br>");
+        document.write(name.lastIndexOf("e"));
+        document.write("<br>");
+        document.write(name.toUpperCase());
+        document.write("<br>");
+        document.write(name.toLowerCase());
+        document.write("<br>");
+        document.write(name.length);
+        document.write("<br>");
+        document.write(name.substr(2,4));
+        document.write("<br>");
+        document.write(name.substring(2,10));
+        document.write("<br>");
+        document.write(name.replace("c","C"));
+        document.write("<br>");
+        document.write(name.search("o"));
+        document.write("<br>");
+        if(name.match(/[a-z]/)){
+            alert("Match");
+        }else{
+            alert("Not Match");
+        }
+
+        document.write(name.charAt(0));
+        document.write("<br>");
+        // ASCII
+
+        document.write(name.charCodeAt());
+        document.write("<br>");
+        // a-z
+        document.write(String.fromCharCode(97));
+        document.write("<br>");
+        document.write(String.fromCharCode(122));
+        document.write("<br>");
+        // A-Z
+        document.write(String.fromCharCode(65));
+        document.write("<br>");
+        document.write(String.fromCharCode(90));
+        document.write("<br>");
+    </script>
+</body>
+
+</html>

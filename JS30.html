@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <style>
+            .img{
+                height: 400px;
+                width: 800px;
+                background-size: 100% 100%;
+            }
+        </style>
+        <script>
+            var images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
+            var i=0;
+            function slider(){
+                img1.src = images[i];
+                i++;
+                if(i==images.length)
+                {
+                    i=0;
+                }
+                setTimeout(slider, 3000);
+            }
+        </script>
+    </head>
+    <body onload="slider()">
+        <img src="1.jpg" alt="img" id="img1" class="img">
+    </body>
+</html>

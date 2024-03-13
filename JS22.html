@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script>
+            function add(){
+                var a = document.getElementById("t1").value;
+                var b = document.getElementById("t2").value;
+                a = parseInt(a);
+                b = parseInt(b);
+                var c=a+b;
+                alert(c);
+            }
+        </script>
+    </head>
+    <body>
+        Enter Fisrt Number : <input type="number" id="t1"><br>
+        Enter Second Number : <input type="number" id="t2"><br>
+
+        <button onclick="add()">Add</button>
+
+        <button>Sub</button>
+        <button>Mult</button>
+        <button>Div</button>
+    </body>
+</html>
